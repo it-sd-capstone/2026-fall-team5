@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealDeal - Grocery List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MEALDEAL</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="meal-planner.html">Meal Planner</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="grocery-list.html">Grocery List</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main class="grocery-page">
+        <div class="grocery-heading">
+            <h2>Grocery List</h2>
+            <p>Keep track of the ingredients you need.</p>
+        </div>
+
+        <div class="grocery-form">
+            <input type="text" id="itemName" placeholder="Enter grocery item">
+            <input type="text" id="itemQuantity" placeholder="Quantity">
+            <button onclick="addItem()">Add Item</button>
+        </div>
+
+        <div class="grocery-container">
+            <h3>Your Shopping List</h3>
+            <ul id="groceryItems"></ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MealDeal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let groceryItems = JSON.parse(localStorage.getItem("groceryItems")) || [];
+
+        function displayItems() {
+            const list = document.getElementById("groceryItems");
+            list.innerHTML = "";
+
+            groceryItems.forEach((item, index) => {
+                const li = document.createElement("li");
+
+                li.innerHTML = `
+                    <label>
+                        <input type="checkbox"
+                            ${item.checked ? "checked" : ""}
+                            onchange="toggleItem(${index})">
+                        <span class="${item.checked ? "completed" : ""}">
+                            ${item.name} - ${item.quantity}
+                        </span>
+                    </label>
+                    <button onclick="deleteItem(${index})">Delete</button>
+                `;
+
+                list.appendChild(li);
+            });
+        }
+
+        function addItem() {
+            const name = document.getElementById("itemName").value.trim();
+            const quantity = document.getElementById("itemQuantity").value.trim();
+
+            if (name === "" || quantity === "") {
+                alert("Please enter an item and quantity.");
+                return;
+            }
+
+            groceryItems.push({
+                name: name,
+                quantity: quantity,
+                checked: false
+            });
+
+            saveItems();
+
+            document.getElementById("itemName").value = "";
+            document.getElementById("itemQuantity").value = "";
+        }
+
+        function toggleItem(index) {
+            groceryItems[index].checked = !groceryItems[index].checked;
+            saveItems();
+        }
+
+        function deleteItem(index) {
+            groceryItems.splice(index, 1);
+            saveItems();
+        }
+
+        function saveItems() {
+            localStorage.setItem("groceryItems", JSON.stringify(groceryItems));
+            displayItems();
+        }
+
+        displayItems();
+    </script>
+
+</body>
+</html>

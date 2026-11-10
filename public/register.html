@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealDeal - Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MEALDEAL</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="meal-planner.html">Meal Planner</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="grocery-list.html">Grocery List</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main class="login-page">
+        <div class="login-box">
+            <h2>Create Account</h2>
+            <p>Join MealDeal and start planning your meals.</p>
+
+            <form id="registerForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+
+                <button type="submit">Create Account</button>
+            </form>
+
+            <p class="register-link">
+                Already have an account?
+                <a href="login.html">Log in</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MealDeal. All rights reserved.</p>
+    </footer>
+
+    <
+<script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match. Please try again.");
+            return;
+        }
+
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters.");
+            return;
+        }
+
+        alert("Passwords match! Account registration will be connected to the database later.");
+    });
+    </script>
+
+</body>
+</html>

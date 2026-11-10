@@ -1,0 +1,609 @@
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #050505;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Header and Logo */
+header {
+    background-color: #080808;
+    padding: 22px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #292929;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.04);
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    white-space: nowrap;
+    text-shadow: 0 0 8px #ffffff,
+                 0 0 18px rgba(255, 255, 255, 0.5);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+nav a {
+    color: #cfcfcf;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 0 15px;
+    border-right: 1px solid #555555;
+    transition: 0.3s ease;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #ffffff,
+                 0 0 15px #ffffff;
+}
+
+/* Welcome Section */
+.welcome {
+    min-height: 570px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(
+        circle at center,
+        #202020 0%,
+        #0c0c0c 45%,
+        #050505 100%
+    );
+}
+
+.welcome h2 {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #ffffff,
+                 0 0 25px rgba(255, 255, 255, 0.45);
+}
+
+.welcome p {
+    color: #bdbdbd;
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+/* Buttons */
+button {
+    background-color: #ffffff;
+    color: #050505;
+    border: 1px solid #ffffff;
+    padding: 15px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #050505;
+    color: #ffffff;
+    box-shadow: 0 0 10px #ffffff,
+                0 0 25px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Get Started Button */
+.start-button {
+    display: inline-block;
+    background: #ffffff;
+    color: #050505;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.start-button:hover {
+    background: #050505;
+    color: #ffffff;
+    box-shadow: 0 0 10px #ffffff,
+                0 0 25px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: #080808;
+    color: #888888;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #292929;
+    font-size: 14px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .welcome h2 {
+        font-size: 35px;
+    }
+
+    .welcome p {
+        font-size: 16px;
+    }
+}
+
+/* Dashboard */
+.dashboard {
+    padding: 70px 8%;
+    min-height: 600px;
+}
+
+/* Dashboard Heading */
+.dashboard-heading {
+    margin-bottom: 45px;
+}
+
+.dashboard-heading h2 {
+    font-size: 38px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.dashboard-heading p {
+    color: #aaaaaa;
+    font-size: 17px;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: #111111;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 30px;
+    min-height: 220px;
+    transition: 0.3s ease;
+}
+
+.dashboard-card:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.dashboard-card h3 {
+    color: #ffffff;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card p {
+    color: #aaaaaa;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.dashboard-card a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.dashboard-card a:hover {
+    text-shadow: 0 0 8px #ffffff;
+}
+
+/* Dashboard Responsive Design */
+@media (max-width: 900px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Weekly Meal Planner */
+.planner {
+    padding: 60px 6%;
+    min-height: 600px;
+}
+
+/* Planner Heading */
+.planner-heading {
+    margin-bottom: 35px;
+}
+
+.planner-heading h2 {
+    color: #ffffff;
+    font-size: 38px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.planner-heading p {
+    color: #aaaaaa;
+}
+
+/* Weekly Day Cards */
+.week-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.day-card {
+    background: #111111;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 22px;
+    transition: 0.3s ease;
+}
+
+.day-card:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.day-card h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 10px;
+}
+
+.day-card p {
+    color: #cccccc;
+    font-size: 14px;
+    margin: 12px 0 5px;
+}
+
+/* Meal Input Fields */
+.day-card input {
+    width: 100%;
+    padding: 10px;
+    background: #050505;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    color: #ffffff;
+    outline: none;
+}
+
+.day-card input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 7px rgba(255, 255, 255, 0.3);
+}
+
+.day-card input::placeholder {
+    color: #777777;
+}
+
+/* Planner Responsive Design */
+@media (max-width: 1000px) {
+    .week-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .week-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Recipe Library */
+.recipe-page {
+    padding: 60px 8%;
+    min-height: 600px;
+}
+
+/* Recipe Heading */
+.recipe-heading {
+    margin-bottom: 40px;
+}
+
+.recipe-heading h2 {
+    color: #ffffff;
+    font-size: 38px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.recipe-heading p {
+    color: #aaaaaa;
+    margin-top: 8px;
+}
+
+/* Recipe Cards */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.recipe-card {
+    background: #111111;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 28px;
+    transition: 0.3s ease;
+}
+
+.recipe-card:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.recipe-card h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.recipe-description {
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
+
+.recipe-card strong {
+    color: #ffffff;
+}
+
+.recipe-card ul {
+    padding-left: 20px;
+    margin: 12px 0 25px;
+    color: #bbbbbb;
+}
+
+.recipe-card li {
+    margin-bottom: 6px;
+}
+
+/* Recipe Nutrition Information */
+.nutrition {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #444444;
+    padding-top: 15px;
+}
+
+.nutrition span {
+    background: #222222;
+    color: #ffffff;
+    border: 1px solid #555555;
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Recipe Responsive Design */
+@media (max-width: 1000px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Grocery List */
+.grocery-page {
+    padding: 60px 8%;
+    min-height: 600px;
+}
+
+/* Grocery List Heading */
+.grocery-heading {
+    margin-bottom: 35px;
+}
+
+.grocery-heading h2 {
+    color: #ffffff;
+    font-size: 38px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.grocery-heading p {
+    color: #aaaaaa;
+    margin-top: 8px;
+}
+
+/* Add Grocery Item Form */
+.grocery-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.grocery-form input {
+    padding: 13px;
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.grocery-form button {
+    padding: 13px 25px;
+    background: #ffffff;
+    color: #050505;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Grocery List Container */
+.grocery-container {
+    background: #111111;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.grocery-container h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Grocery Items */
+#groceryItems {
+    list-style: none;
+    padding: 0;
+}
+
+#groceryItems li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #333333;
+    color: #ffffff;
+}
+
+#groceryItems label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Delete Grocery Item Button */
+#groceryItems button {
+    background: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Completed Grocery Items */
+.completed {
+    text-decoration: line-through;
+    color: #777777;
+}
+
+/* Login and Registration */
+.login-page {
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* Login and Registration Box */
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 10px;
+    padding: 35px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.login-box h2 {
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-box > p {
+    color: #aaaaaa;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Login and Registration Input Fields */
+.login-box label {
+    display: block;
+    color: #ffffff;
+    margin: 15px 0 8px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 13px;
+    background: #050505;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/* Login and Registration Button */
+.login-box form button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 25px;
+    background: #ffffff;
+    color: #050505;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-box form button:hover {
+    background: #cccccc;
+}
+
+/* Login and Registration Links */
+.login-box .register-link {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #ffffff;
+}

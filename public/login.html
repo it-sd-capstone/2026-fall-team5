@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealDeal - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MEALDEAL</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="meal-planner.html">Meal Planner</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="grocery-list.html">Grocery List</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main class="login-page">
+        <div class="login-box">
+            <h2>Welcome Back</h2>
+            <p>Log in to your MealDeal account.</p>
+
+            <form id="loginForm">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="register-link">
+                Don't have an account?
+                <a href="register.html">Create an account</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MealDeal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Login functionality will be connected to the database later.");
+        });
+    </script>
+
+</body>
+</html>
