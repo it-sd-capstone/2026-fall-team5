@@ -99,7 +99,7 @@ For development, `npm run dev` restarts the server automatically when a file cha
 
 ### Live website
 
-MealDeal is hosted at: **URL to be added after the first Render deployment**
+MealDeal is hosted at: https://mealdeal-jid8.onrender.com/
 
 When deploying to [Render](https://render.com/), create a PostgreSQL database and a Web Service from this repository, then set these values:
 
