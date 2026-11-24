@@ -1,0 +1,25 @@
+{
+  "name": "mealdeal",
+  "version": "1.0.0",
+  "description": "MealDeal: plan meals, browse recipes, and build grocery lists.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "db:init": "node server/init-db.js",
+    "test": "node --test test/database.test.js"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
